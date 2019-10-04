@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
-import { View, ScrollView, StyleSheet, ViewPagerAndroid, Platform, Dimensions, Animated, TouchableOpacity, Image } from 'react-native'
+import { View, ScrollView, StyleSheet, Platform, Dimensions, Animated, TouchableOpacity, Image } from 'react-native'
 import ViewPagerAndroidContainer from '../components/android-container'
+import ViewPager from "@react-native-community/viewpager";
 import Control from './control'
 import { EMOJIS_DATA, DEFAULT_EMOJI } from '../../source/emojis'
 const { width, height } = Dimensions.get('window')
@@ -35,7 +36,7 @@ export default class EmojiPanel extends PureComponent {
 
   render () {
     const { allPanelHeight, HeaderHeight } = this.props
-    const ContainerComponent = Platform.select({ ios: ScrollView, android: ViewPagerAndroid })
+    const ContainerComponent = Platform.select({ ios: ScrollView, android: ViewPager })
     this.total = 0
     return (
       <Animated.View style={[styles.container, {
