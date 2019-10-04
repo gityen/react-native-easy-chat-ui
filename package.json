@@ -33,6 +33,7 @@
     "react-native": "*"
   },
   "dependencies": {
+    "@react-native-community/viewpager": "^2.0.0",
     "moment": "^2.22.2"
   },
   "devDependencies": {
